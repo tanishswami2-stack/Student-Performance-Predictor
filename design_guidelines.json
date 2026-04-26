@@ -1,0 +1,79 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Jewel & Luxury)",
+  "vibe": "Sophisticated, authoritative, cinematic, modern data-driven. Moving away from standard SaaS flat dark mode to a rich 'deep space/aubergine' aesthetic.",
+  "typography": {
+    "heading_font": "Outfit",
+    "body_font": "Manrope",
+    "strategy": "High contrast between geometric headings (Outfit) and highly legible geometric humanist body (Manrope). No Inter. Headings must have tracking-tight."
+  },
+  "color_palette": {
+    "background_primary": "#0A0510",
+    "background_secondary": "#130A1F",
+    "surface": "#1B102C",
+    "surface_glass": "rgba(27, 16, 44, 0.65)",
+    "border": "rgba(139, 92, 246, 0.15)",
+    "primary": "#8B5CF6",
+    "primary_hover": "#A78BFA",
+    "text_primary": "#F8F5FF",
+    "text_secondary": "#A79FC4",
+    "accent_excellent": "#34D399",
+    "accent_good": "#60A5FA",
+    "accent_average": "#FBBF24",
+    "accent_at_risk": "#FB7185"
+  },
+  "spacing_and_layout": {
+    "strategy": "Control Room Grid (Dense but breathing). Using p-6 to p-8 padding on all main containers. Strict asymmetrical emphasis.",
+    "dashboard_grid": "Base grid-cols-1 md:grid-cols-4. Gap-6. KPIs span 1 col each. Main charts span 2 or 3 cols. Feed/lists span 1 col.",
+    "surface_treatment": "Crystal Glassmorphism: backdrop-blur-xl on headers and floating elements. 1px inner borders (border-white/10) to separate glass from background. Flat background for data widgets to prevent refraction distortion."
+  },
+  "components": {
+    "cards": "Avoid standard fully rounded Shadcn cards. Use minimal 4px to 8px max border radius. 1px solid subtle border. Flat solid backgrounds.",
+    "buttons": "Flat design with soft glow on hover. No gradients on buttons. Primary buttons use #8B5CF6.",
+    "forms": "Use Shadcn components heavily customized for .jsx. Input fields must have solid dark background (#0A0510) and purple-tinted borders.",
+    "tables": "Edge-to-edge minimalist tables. Hover states on rows should highlight with very subtle #8B5CF6 (opacity 5%)."
+  },
+  "data_visualization": {
+    "library": "recharts",
+    "styling": "Remove all chart axis lines, use dotted grid lines only on Y axis (stroke='rgba(255,255,255,0.05)'). Tooltips must use Glassmorphism style with backdrop-blur. Use gradient fills for area charts ending in 0 opacity.",
+    "radar_chart": "Use primary purple (#8B5CF6) for student metrics vs average (#A79FC4).",
+    "bar_chart": "Use rounded top corners for bars (radius=[4, 4, 0, 0])."
+  },
+  "motion": {
+    "hover": "Subtle translation (-translate-y-0.5) and shadow-lg with purple tint on cards.",
+    "page_transition": "Simple fade in. Use framer-motion for staggering list items in the students table."
+  },
+  "media_urls": {
+    "student_portraits": [
+      {
+        "url": "https://images.unsplash.com/photo-1758613171176-ea64579c2dcf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwzfHxkaXZlcnNlJTIwc3R1ZGVudCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NzIwNjgzOXww&ixlib=rb-4.1.0&q=85",
+        "description": "Diverse student 1",
+        "category": "table_avatar"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1543689604-6fe8dbcd1f59?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwc3R1ZGVudCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NzIwNjgzOXww&ixlib=rb-4.1.0&q=85",
+        "description": "Diverse student 2",
+        "category": "table_avatar"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1765572144519-1dc1e6e07bc9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwyfHxkaXZlcnNlJTIwc3R1ZGVudCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NzIwNjgzOXww&ixlib=rb-4.1.0&q=85",
+        "description": "Diverse student 3",
+        "category": "table_avatar"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1758270705641-acf09b68a91f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHw0fHxkaXZlcnNlJTIwc3R1ZGVudCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NzIwNjgzOXww&ixlib=rb-4.1.0&q=85",
+        "description": "Diverse student 4",
+        "category": "table_avatar"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install and use Outfit for headings and Manrope for body text via Google Fonts.",
+    "Do not use generic Shadcn borders. Override Tailwind's border-border to be rgba(139, 92, 246, 0.15) globally in tailwind config.",
+    "Ensure the application strictly uses .js/.jsx files as typescript is not used.",
+    "Include 'data-testid' on all buttons, forms, inputs, and major interactables.",
+    "For the dashboard background, use a CSS radial gradient overlay to create a subtle glow: bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-900/20 via-[#0A0510] to-[#0A0510].",
+    "Ensure Recharts uses the specified color palette for variables instead of default colors, specifically avoiding standard blue/gray.",
+    "Build the dashboard using the 'Control Room Grid' with accurate mobile-first responsive adjustments."
+  ]
+}
